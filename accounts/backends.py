@@ -28,13 +28,13 @@ class CaseInsensitiveAuth:
         user = users[0]
         # If the password is correct, return user object
         if user.check_password(password):
-            return user
+            return username_or_email
 
         return None
 
     def get_user(self, user_id):
         """
-        Used by the Django authentication system to retrieve a User instance
+        Used by the Django authentication system to retrieve a user instance
         """
         try:
             user = User.objects.get(pk=user_id)
