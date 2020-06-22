@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from products.models import Product
+from bugs.models import Bugs
+from features.models import Features
 
 # Create your views here.
 def do_search(request):
