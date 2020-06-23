@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from bugs.models import Bugs
+from bugs.models import Bug
 from features.models import Features
 
 # Create your views here.

@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Bugs(models.Model):
+class Bug(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
 

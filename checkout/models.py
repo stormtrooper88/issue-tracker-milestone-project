@@ -1,5 +1,4 @@
 from django.db import models
-from bugs.models import Bugs
 from features.models import Features
 
 # Create your models here.

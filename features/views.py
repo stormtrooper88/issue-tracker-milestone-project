@@ -3,6 +3,6 @@ from django.contrib.auth.decorators import login_required
 from .models import Features
 
 # Create your views here.
-def all_products(request):
-    products = Product.objects.all()
-    return render(request, "featuress.html", {"products": products})
+def all_features(request):
+    Features = Features.objects.all()
+    return render(request, "features.html", {"features": features})
