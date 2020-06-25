@@ -44,7 +44,7 @@ footer {
 
 
 
-.product {
+.feature {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -83,6 +83,6 @@ caption p {
 
 
 
-.product-description {
+.feature-description {
     min-height: 40px;
 }

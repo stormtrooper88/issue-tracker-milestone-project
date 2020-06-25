@@ -15,7 +15,7 @@ def logout(request):
     """A view that logs the user out and redirects back to the index page"""
     auth.logout(request)
     messages.success(request, "You have successfully been logged out!")
-    return redirect(reverse('index'))
+    return redirect(reverse('front'))
 
 def login(request):
     """A view that manages the login form"""
@@ -54,7 +54,7 @@ def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
         if user_form.is_valid():
-            user.form.save()
+            user_form.save()
 
             user = auth.authenticate(request.POST.get('email'),
                                     password=request.POST.get('password1'))
