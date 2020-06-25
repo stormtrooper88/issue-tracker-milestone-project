@@ -28,7 +28,7 @@ class CaseInsensitiveAuth:
         user = users[0]
         # If the password is correct, return user object
         if user.check_password(password):
-            return username_or_email
+            return user
 
         return None
 
