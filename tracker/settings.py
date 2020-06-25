@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'checkout',
     'features',
     'tracker',
+    'home',
 ]
 
 MIDDLEWARE = [
