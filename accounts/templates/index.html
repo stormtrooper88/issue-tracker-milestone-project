@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>Welcome to your account</h3>
-<p>Please feel free to add a bug or request a feature below.</p>
+    <h2>Success!</h2>
+
+    <p>You are logged in as {{ user.email }} </p>
+    <p> Please report a  <a href="{% url 'bugs' %}"><i class="fa fa-user-plus"></i>bug</a> here. </p>
+    <p> Please request a  <a href="{% url 'features' %}"><i class="fa fa-user-plus"></i>feature</a> here. </p>
 {% endblock %}
