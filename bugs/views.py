@@ -8,7 +8,7 @@ def all_bugs(request):
     """
     Create a view that will return a list of all Bugs that were published prior to 'now' and give them the 'bugs.html' template
     """
-    bugs = Bug.objects.filter(created_date)()).order_by('-created_date')
+    bugs = Bug.objects.filter()
     return render(request, "bugs.html", {"bugs": bugs})
 
 def bug_detail(request, pk):
@@ -28,7 +28,7 @@ def create_or_edit_bug(request, pk=None):
     bug = get_object_or_404(Bug, pk=pk) if pk else None
     if request.method == "POST":
         form = BugPostForm(request.POST, request.FILES, instance=bug)
-        if form.is.valid():
+        if form.is_valid():
             bug = form.save()
             return redirect(bug_detail, bug.pk)
     else:

@@ -22,7 +22,7 @@ from checkout import urls as urls_checkout
 from features import urls as urls_features
 from home.views import front
 from search import urls as urls_search
-from bugs.views import all_bugs
+from bugs.views import all_bugs, bug_detail, create_or_edit_bug
 from django.views import static
 
 
