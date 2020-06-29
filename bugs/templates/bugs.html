@@ -4,9 +4,9 @@
     {% for bug in bugs %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
             <div class="row">
-                <h3>{{ bug.name }}</h3>
+                <h3>{{ Bug.name }}</h3>
                          <p>{{ Bug.content|truncatewords:30 }}</p>
-                        <p><a href="{% url 'bug_detail' post.id %}"  class="btn btn-default">Read more</a></p>
+                        <p><a href="{% url 'bug_detail' bug.id %}"  class="btn btn-default">Read more</a></p>
                         <p><span class="boldtext">Created on:</span> {{ Bug.created_date }} </p>
                         <p><span class="boldtext">Expected to be fixed by:</span> {{Bug.finished_date}}</p>
                         <p><span class="boldtext">Tag:</span> {{ Bug.tag }}</p>
@@ -14,6 +14,5 @@
                 </div>
             </div>
             <hr>
-        </div>
     {% endfor %}
 {% endblock %}
