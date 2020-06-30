@@ -26,11 +26,11 @@ def checkout(request):
             cart = request.session.get('cart', {})
             total = 0
             for id, quantity in cart.items():
-                product = get_object_or_404(Product, pk=id)
-                total += quantity * product.price
+                feature = get_object_or_404(Features, pk=id)
+                total += quantity * feature.price
                 order_line_item = OrderLineItem(
                     order=order,
-                    product=product,
+                    product=feature,
                     quantity=quantity
                 )
                 order_line_item.save()

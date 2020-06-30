@@ -9,14 +9,14 @@ def all_bugs(request):
     Create a view that will return a list of all Bugs that were published prior to 'now' and give them the 'bugs.html' template
     """
     bugs = Bug.objects.filter()
-    return render(request, "bugs.html", {"bugs": bugs})
+    form = BugPostForm(instance=None)
+    return render(request, "bugs.html", {"bugs": bugs, 'form': form})
 
 def bug_detail(request, pk):
     """
     Create a view that will return a single Bug object based on the bug ID(pk) and render it to the 'bugdetail.html' template.
     """
     bug = get_object_or_404(Bug)
-    bug.views += 1
     bug.save()
     return render(request, "bugdetail.html", {'bug': bug})
 
@@ -32,5 +32,5 @@ def create_or_edit_bug(request, pk=None):
             bug = form.save()
             return redirect(bug_detail, bug.pk)
     else:
-        form = BugPostForm(instance=bug)
+        form = BugPostForm(instance=Bug)
     return render(request, 'bugs.html', {'form': form})

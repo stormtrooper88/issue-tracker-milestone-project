@@ -3,7 +3,9 @@ body {
     padding-top: 100px;
 }
 
-
+.icon-bar {
+    color: white;
+}
 
 footer {
     margin-top: 40px;
