@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Bug
+import datetime
 from .forms import BugPostForm
 
 # Create your views here.
@@ -16,7 +17,7 @@ def bug_detail(request, pk):
     """
     Create a view that will return a single Bug object based on the bug ID(pk) and render it to the 'bugdetail.html' template.
     """
-    bug = get_object_or_404(Bug)
+    bug = get_object_or_404(Bug, pk=pk)
     bug.save()
     return render(request, "bugdetail.html", {'bug': bug})
 
@@ -29,7 +30,9 @@ def create_or_edit_bug(request, pk=None):
     if request.method == "POST":
         form = BugPostForm(request.POST, request.FILES, instance=bug)
         if form.is_valid():
-            bug = form.save()
+            bug = form.save(commit=False)
+            bug.created_date = datetime.datetime.now()
+            bug.save()
             return redirect(bug_detail, bug.pk)
     else:
         form = BugPostForm(instance=Bug)
