@@ -6,10 +6,10 @@
                 <h3>{{ bug.name }}</h3>
  <div class="row">
                 <div class="col-xs-9">
-                    <p>{{ Bug.content }}</p>
-                    <p><span class="boldtext">Created on:</span> {{ Bug.created_date }} </p>
-                    <p><span class="boldtext">Expected to be fixed by:</span> {{Bug.finished_date}}</p>
-                        <p><span class="boldtext">Tag:</span> {{ Bug.tag }}</p>
+                    <p>{{ bug.content }}</p>
+                    <p><span class="boldtext">Created on:</span> {{ bug.created_date }} </p>
+                    <p><span class="boldtext">Expected to be fixed by:</span> {{ bug.finished_date}}</p>
+                        <p><span class="boldtext">Tag:</span> {{ bug.tag }}</p>
                     <a href="{% url 'bugs' %}" class="btn btn-default">Back to Bugs</a>
                     <a href="{% url 'edit_bug' Bug.id %}" class="btn btn-default">Edit a Bug</a>
                     <hr>
