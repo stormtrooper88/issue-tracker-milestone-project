@@ -1,29 +1,25 @@
 {% extends 'base.html' %}
+{% load bootstrap_tags %}
 {% block content %}
-
 <div class="row row-flex">
+    <h1>Request a feature below</h1>
+    <form method="POST" action="{% url 'new_feature' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form | as_bootstrap }}
+        <button type="submit" class="btn btn-info">Request a your feature</button>
+    </form>
     {% for feature in features %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-            <div class="panel-body">
-                <div class="feature"></div>
-
-
-                <h3>{{ feature.name }}</h3>
-                <p class="feature-description">{{ feature.description }}</p>
-
-                <p>{{ feature.price }}</p>
-
-                <form method="post" action="{% url 'add_to_cart' feature.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
+            <div class="row">
+                <h3>{{ Features.name }}</h3>
+                         <p>{{ Features.content|truncatewords:30 }}</p>
+                        <p><a href="{% url 'feature_detail' feature.id %}"  class="btn btn-default">Read more</a></p>
+                        <p><span class="boldtext">Created on:</span> {{ Features.created_date }} </p>
+                        <p><span class="boldtext">Expected to be fixed by:</span> {{ Features.finished_date}}</p>
+                        <p><span class="boldtext">Tag:</span> {{ Features.tag }}</p>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
+            <hr>
     {% endfor %}
-</div>
 {% endblock %}

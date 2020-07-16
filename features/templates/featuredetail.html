@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row row-flex">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+                <h3>{{ Features.name }}</h3>
+ <div class="row">
+                <div class="col-xs-9">
+                    <p>{{ Features.content }}</p>
+                    <p><span class="boldtext">Created on:</span> {{ Features.created_date }} </p>
+                    <p><span class="boldtext">Expected to be fixed by:</span> {{ Features.finished_date}}</p>
+                        <p><span class="boldtext">Tag:</span> {{ Features.tag }}</p>
+                    <a href="{% url 'features' %}" class="btn btn-default">Back to features</a>
+                    <a href="{% url 'edit_feature' feature.id %}" class="btn btn-default">Edit a feature</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

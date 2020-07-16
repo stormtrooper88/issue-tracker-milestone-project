@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+{% block content %}
+    <h1>Request a feature below</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form | as_bootstrap }}
+        <button type="submit" class="btn btn-info">Request your bug</button>
+    </form>
+{% endblock %}
