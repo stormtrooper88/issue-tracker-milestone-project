@@ -3,6 +3,9 @@ import datetime
 
 # Create your models here.
 class Features(models.Model):
+    """
+    A single feature post
+    """
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
     created_date = models.DateTimeField(auto_now=False, auto_now_add=False)
