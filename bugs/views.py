@@ -35,5 +35,5 @@ def create_or_edit_bug(request, pk=None):
             bug.save()
             return redirect(bug_detail, bug.pk)
     else:
-        form = BugPostForm(instance=Bug)
+        form = BugPostForm(instance=bug)
     return render(request, 'bugs.html', {'form': form})
