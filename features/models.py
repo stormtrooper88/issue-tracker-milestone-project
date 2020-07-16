@@ -11,7 +11,7 @@ class Features(models.Model):
     created_date = models.DateTimeField(auto_now=False, auto_now_add=False)
     finished_date = models.DateTimeField(blank=True, null=True)
     tag = models.CharField(max_length=30, blank=True, null=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2, blank=True)
 
 
     def __str__(self):
