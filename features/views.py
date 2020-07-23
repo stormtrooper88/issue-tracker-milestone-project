@@ -33,6 +33,11 @@ def create_or_edit_feature(request, pk=None):
             feature = form.save(commit=False)
             feature.created_date = datetime.datetime.now()
             feature.save()
+            cart = request.session.get('cart', {})
+            if id in cart:
+                cart[id] = int(cart[id]) + 1
+            else:
+                cart[id] = cart.get(id, 1)
             return redirect(feature_detail, feature.pk)
     else:
         form = FeaturePostForm(instance=feature)
