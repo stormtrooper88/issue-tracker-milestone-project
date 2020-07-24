@@ -24,7 +24,7 @@ def feature_detail(request, pk):
 
 def create_or_edit_feature(request, pk=None):
     """
-    Create a view that allows users to create or edit a feature depending if the bug ID is null or not
+    Create a view that allows users to create or edit a feature depending if the feature ID is null or not
     """
     feature = get_object_or_404(Features, pk=pk) if pk else None
     if request.method == "POST":
