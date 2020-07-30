@@ -41,4 +41,4 @@ def create_or_edit_feature(request, pk=None):
             return redirect(feature_detail, feature.pk)
     else:
         form = FeaturePostForm(instance=feature)
-    return render(request, 'features.html', {'form': form})
+    return render(request, 'trackerfeatureform.html', {'form': form})

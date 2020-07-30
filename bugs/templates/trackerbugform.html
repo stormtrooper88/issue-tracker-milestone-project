@@ -2,7 +2,7 @@
 {% load bootstrap_tags %}
 {% block content %}
     <h1>Post a bug below</h1>
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST">
         {% csrf_token %}
         {{ form | as_bootstrap }}
         <button type="submit" class="btn btn-info">Post your bug</button>
