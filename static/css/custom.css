@@ -1,6 +1,10 @@
 body {
     font-family: Arial;
-    padding-top: 100px;
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #ededed;
+    color: #A9A9A9;
 }
 
 .icon-bar {
@@ -8,6 +12,7 @@ body {
 }
 
 footer {
+    font-family: Arial;
     margin-top: 40px;
     padding-top: 20px;
     padding-bottom: 20px;

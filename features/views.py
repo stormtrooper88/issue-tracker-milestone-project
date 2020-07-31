@@ -28,16 +28,23 @@ def create_or_edit_feature(request, pk=None):
     """
     feature = get_object_or_404(Features, pk=pk) if pk else None
     if request.method == "POST":
+        print("We've got a POST request coming through, a feature got submitted")
         form = FeaturePostForm(request.POST, request.FILES, instance=feature)
+        print(f"the form is: {form}")
         if form.is_valid():
+            print("the form is valid")
             feature = form.save(commit=False)
             feature.created_date = datetime.datetime.now()
             feature.save()
             cart = request.session.get('cart', {})
+            print(f"The cart before: {cart}")
+            print(f"Saved feature looks like this: {feature}, with pk of {feature.pk}")
             if feature.pk in cart:
                 cart[feature.pk] = int(cart[feature.pk]) + 1
             else:
                 cart[feature.pk] = cart.get(feature.pk, 1)
+            print(f"The cart after: {cart} and the feature in it: {cart[feature.pk]}!")
+            request.session['cart'] = cart 
             return redirect(feature_detail, feature.pk)
     else:
         form = FeaturePostForm(instance=feature)
