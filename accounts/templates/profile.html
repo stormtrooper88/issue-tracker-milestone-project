@@ -2,9 +2,9 @@
 {% block content %}
 
     <h2 class="header">Success!</h2>
-
+<div class="view">
     <p>You are logged in as {{ user.email }} </p>
     <p> Please report a  <a href="{% url 'bugs' %}"><i class="fa fa-user-plus"></i>bug</a> here. </p>
     <p> Please request a  <a href="{% url 'features' %}"><i class="fa fa-user-plus"></i>feature</a> here. </p>
-
+ </div>
 {% endblock %}

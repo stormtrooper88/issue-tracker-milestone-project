@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
-    <h1>Post a bug below</h1>
+    <h1 class="header">Post a bug below</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form | as_bootstrap }}

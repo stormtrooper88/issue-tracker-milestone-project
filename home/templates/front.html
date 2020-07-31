@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-        <h3>Welcome to Issue Tracker</h3>
+        <h3 class="header">Welcome to Issue Tracker</h3>
+        <div class="view">
 <p>You will need to <a href="{% url 'register' %}"><i class="fa fa-user-plus"></i>register</a> before being able to post a bug or request a feature!</p>
 <p>If you are already a member, please <a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> log in</a> here.</p>
 <p>Bugs will be fixed for free and features will require payment before they are created</p>
+        </div>
 {% endblock %}
