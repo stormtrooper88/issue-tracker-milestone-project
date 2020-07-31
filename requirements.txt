@@ -5,3 +5,4 @@ Pillow==7.1.2
 psycopg2==2.8.5
 pytz==2020.1
 stripe==2.48.0
+gunicorn-20.0.4
