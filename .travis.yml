@@ -3,7 +3,6 @@ python:
   - "3.5"
 install: "pip install -r requirements.txt"
 before_install:
-  - cd project
   - sudo apt-get install libgnutls28-dev
 script: 
   - SECRET_KEY="Pluto" ./manage.py test
