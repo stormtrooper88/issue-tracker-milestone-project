@@ -3,6 +3,28 @@
     <h2>Success!</h2>
 
     <p>You are logged in as {{ user.email }} </p>
+    {% for feature in features %}
+                <div class="row">
+                <h3>{{ Features.name }}</h3>
+                         <p>{{ Features.content|truncatewords:30 }}</p>
+                        <p><a href="{% url 'feature_detail' feature.id %}"  class="btn btn-default">Read more</a></p>
+                        <p><span class="boldtext">Created on:</span> {{ Features.created_date }} </p>
+                        <p><span class="boldtext">Expected to be fixed by:</span> {{ Features.finished_date}}</p>
+                        <p><span class="boldtext">Tag:</span> {{ Features.tag }}</p>
+                    </div>
+
+    {% endfor %}
+    {% for bug in bugs %}
+     <div class="row">
+                <h3>{{ Bug.name }}</h3>
+                         <p>{{ Bug.content|truncatewords:30 }}</p>
+                        <p><a href="{% url 'bug_detail' bug.pk %}"  class="btn btn-default">Read more</a></p>
+                        <p><span class="boldtext">Created on:</span> {{ Bug.created_date }} </p>
+                        <p><span class="boldtext">Expected to be fixed by:</span> {{Bug.finished_date}}</p>
+                        <p><span class="boldtext">Tag:</span> {{ Bug.tag }}</p>
+                    </div>
+    {% endfor %}
     <p> Please report a  <a href="{% url 'bugs' %}"><i class="fa fa-user-plus"></i>bug</a> here. </p>
     <p> Please request a  <a href="{% url 'features' %}"><i class="fa fa-user-plus"></i>feature</a> here. </p>
+     
 {% endblock %}
