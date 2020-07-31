@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Success!</h2>
+    <h2 class="header">Success!</h2>
 
     <p>You are logged in as {{ user.email }} </p>
     <p> Please report a  <a href="{% url 'bugs' %}"><i class="fa fa-user-plus"></i>bug</a> here. </p>
