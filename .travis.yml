@@ -5,4 +5,4 @@ install: "pip install -r requirements.txt"
 before_install:
   - sudo apt-get install libgnutls28-dev
 script: 
-  - SECRET_KEY="Pluto" ./manage.py test
+  - SECRET_KEY="Pluto" python manage.py test
