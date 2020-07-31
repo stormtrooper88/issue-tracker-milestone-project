@@ -1,1 +1,1 @@
-web: gunicorn issue-tracker-milestone-project.wsgi:application
+web: gunicorn tracker.wsgi:application
