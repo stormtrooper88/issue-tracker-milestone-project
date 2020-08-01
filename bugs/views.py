@@ -26,23 +26,23 @@ def create_or_edit_bug(request, pk=None):
     """
     Create a view that allows users to create or edit a post depending if the bug ID is null or not
     """
-    print(f"pk =  {pk}, all the bugs with filter: {Bug.objects.filter()}")
+    # print(f"pk =  {pk}, all the bugs with filter: {Bug.objects.filter()}")
     bug = get_object_or_404(Bug, pk=pk) if pk else None
-    print(f"This is the bug at the beginning: {bug}")
+    # print(f"This is the bug at the beginning: {bug}")
     if request.method == "POST":
-        print("we are in POST")
+        # print("we are in POST")
         form = BugPostForm(request.POST, request.FILES, instance=bug)
-        print(f"the form is: {form}")
+        # print(f"the form is: {form}")
         if form.is_valid():
-            print("the form is valid")
+            # print("the form is valid")
             bug = form.save(commit=False)
-            print(f"the date stamp: {datetime.datetime.now()}")
+            # print(f"the date stamp: {datetime.datetime.now()}")
             bug.created_date = datetime.datetime.now()
             bug.save()
-            print(f"The bug after saving it: {bug}")
+            # print(f"The bug after saving it: {bug}")
             return redirect(bug_detail, bug.pk)
-        print("form is not valid")
+        # print("form is not valid")
     else:
         form = BugPostForm(instance=bug)
-        print(f"the form in GET mode: {form}")
+        # print(f"the form in GET mode: {form}")
     return render(request, 'trackerbugform.html', {'form': form})
