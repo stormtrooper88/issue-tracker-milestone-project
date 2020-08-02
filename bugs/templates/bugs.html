@@ -13,16 +13,16 @@
             </form>
             {% for bug in bugs %}
             <div class="container">
-            <div class="row"> 
-            <div class="col">
-            <h3>{{ bug.name }}</h3>
-            <p>{{ bug.content|truncatewords:30 }}</p>
-            <p><a href="{% url 'bug_detail' bug.pk %}"  class="btn btn-default">Read more</a></p>
-            <p><span class="boldtext">Created on:</span> {{ bug.created_date }} </p>
-            <p><span class="boldtext">Expected to be fixed by:</span> {{ bug.finished_date}}</p>
-            <p><span class="boldtext">Tag:</span> {{ bug.tag }}</p>
-            </div>
-            </div>
+               <div class="row">
+                  <div class="col">
+                     <h3>{{ bug.name }}</h3>
+                     <p>{{ bug.content|truncatewords:30 }}</p>
+                     <p><a href="{% url 'bug_detail' bug.pk %}"  class="btn btn-default">Read more</a></p>
+                     <p><span class="boldtext">Created on:</span> {{ bug.created_date }} </p>
+                     <p><span class="boldtext">Expected to be fixed by:</span> {{ bug.finished_date}}</p>
+                     <p><span class="boldtext">Tag:</span> {{ bug.tag }}</p>
+                  </div>
+               </div>
             </div>
          </div>
       </div>

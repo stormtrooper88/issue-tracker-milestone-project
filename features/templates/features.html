@@ -2,31 +2,31 @@
 {% load bootstrap_tags %}
 {% block content %}
 <div class="container">
-<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-<div class="row row-flex">
-<div class="column">
-    <h1 class="header">Request a feature below</h1>
-    <form method="POST" action="{% url 'new_feature' %}">
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <button type="submit" class="btn btn-info">Request a your feature</button>
-    </form>
-    {% for feature in features %}
-        <div class="container">
-            <div class="row">
-            <div class="col">
-                <h3>{{ feature.name }}</h3>
-                         <p>{{ feature.content|truncatewords:30 }}</p>
-                        <p><a href="{% url 'feature_detail' feature.id %}"  class="btn btn-default">Read more</a></p>
-                        <p><span class="boldtext">Created on:</span> {{ feature.created_date }} </p>
-                        <p><span class="boldtext">Expected to be fixed by:</span> {{ feature.finished_date}}</p>
-                        <p><span class="boldtext">Tag:</span> {{ feature.tag }}</p>
-                        </div>
-                    </div>
-                </div>
+   <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+      <div class="row row-flex">
+         <div class="column">
+            <h1 class="header">Request a feature below</h1>
+            <form method="POST" action="{% url 'new_feature' %}">
+               {% csrf_token %}
+               {{ form | as_bootstrap }}
+               <button type="submit" class="btn btn-info">Request a your feature</button>
+            </form>
+            {% for feature in features %}
+            <div class="container">
+               <div class="row">
+                  <div class="col">
+                     <h3>{{ feature.name }}</h3>
+                     <p>{{ feature.content|truncatewords:30 }}</p>
+                     <p><a href="{% url 'feature_detail' feature.id %}"  class="btn btn-default">Read more</a></p>
+                     <p><span class="boldtext">Created on:</span> {{ feature.created_date }} </p>
+                     <p><span class="boldtext">Expected to be fixed by:</span> {{ feature.finished_date}}</p>
+                     <p><span class="boldtext">Tag:</span> {{ feature.tag }}</p>
+                  </div>
+               </div>
             </div>
-           </div>
-           </div>
-           </div>
-    {% endfor %}
+         </div>
+      </div>
+   </div>
+</div>
+{% endfor %}
 {% endblock %}

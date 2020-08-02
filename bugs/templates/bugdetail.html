@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-        <div class="row row-flex">
-        <div class="col">
-                <h3 class="header">{{ bug.name }}</h3>
-                    <p>{{ bug.content }}</p>
-                    <p><span class="boldtext">Created on:</span> {{ bug.created_date }} </p>
-                    <p><span class="boldtext">Expected to be fixed by:</span> {{ bug.finished_date}}</p>
-                        <p><span class="boldtext">Tag:</span> {{ bug.tag }}</p>
-                    <a href="{% url 'bugs' %}" class="btn btn-default">Back to Bugs</a>
-                    <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit a Bug</a>
-                    <hr>
-                </div>
-            </div>
-        </div>
-    </div>
-
+   <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+      <div class="row row-flex">
+         <div class="col">
+            <h3 class="header">{{ bug.name }}</h3>
+            <p>{{ bug.content }}</p>
+            <p><span class="boldtext">Created on:</span> {{ bug.created_date }} </p>
+            <p><span class="boldtext">Expected to be fixed by:</span> {{ bug.finished_date}}</p>
+            <p><span class="boldtext">Tag:</span> {{ bug.tag }}</p>
+            <a href="{% url 'bugs' %}" class="btn btn-default">Back to Bugs</a>
+            <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit a Bug</a>
+            <hr>
+         </div>
+      </div>
+   </div>
+</div>
 {% endblock %}

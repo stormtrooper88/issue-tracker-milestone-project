@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h2 class="header">Success!</h2>
-<div class="view">
-    <p>You are logged in as {{ user.email }} </p>
-    <p> Please report a  <a href="{% url 'bugs' %}"><i class="fa fa-user-plus"></i>bug</a> here. </p>
-    <p> Please request a  <a href="{% url 'features' %}"><i class="fa fa-user-plus"></i>feature</a> here. </p>
- </div>
+<div class="container">
+   <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+      <div class="row row-flex">
+         <div class="col">
+            <h2 class="header">Success!</h2>
+            <p>You are logged in as {{ user.email }} </p>
+            <p> Please report a  <a href="{% url 'bugs' %}"><i class="fa fa-user-plus"></i>bug</a> here. </p>
+            <p> Please request a  <a href="{% url 'features' %}"><i class="fa fa-user-plus"></i>feature</a> here. </p>
+         </div>
+      </div>
+   </div>
+</div>
 {% endblock %}
