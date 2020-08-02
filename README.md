@@ -13,13 +13,21 @@ The Front-End display and functionality use Bootstrap, CSS, HTML, Font Awesome a
 UX
 
 User Stories:
+
 •	As a user, I want to be able to register on the website. 
+
 •	As a user, I want to be able to log in on the website.
+
 •	As a user, once I have been logged in, I want to be able to post a bug on the website. 
+
 •	As a user, once I have been logged in, I want to be able to edit my bug on the website.
+
 •	As a user, I want to be able to search for bugs and features on the website. 
+
 •	As a user, once I have logged in, I want to be able to request a feature on the website.
+
 •	As a user, once I have logged in, I want to be able to edit my request of feature on the website.
+
 •	As a user, once I have logged in, I want to be able to pay for the feature I have requested.
 
 
