@@ -13,7 +13,7 @@ The Front-End display and functionality use Bootstrap, CSS, HTML, Font Awesome a
 
 <h2>UX</h2>
 
-User Stories:
+<h3>User Stories:</h3>
 
 •	As a user, I want to be able to register on the website. 
 
@@ -36,9 +36,9 @@ User Stories:
 
 I worked on my wireframes before starting to create this project. I made several wireframes using Balsamiq focusing on the home page, sign up, log in, bug, bug edit, feature, feature edit, cart and checkout pages. You can find these wireframes <a href="https://github.com/stormtrooper88/issue-tracker-milestone-project/blob/master/Wireframes/issue%20tracker.pdf">here</a>. 
 
-Features:
+<h2>Features:</h2>
 
-Existing Features:
+<h3>Existing Features:</h3>
 
 Sign up:
 
@@ -73,7 +73,7 @@ Checkout:
 Here the user can pay a fee for the feature so that it is created.  
 
 
-Features Left to Implement:
+<h3>Features Left to Implement:</h3>
 
 •	A feature I would have liked to have had is to create a page that contains some graphs showing how many bugs or features are tended to on a daily, weekly and monthly basis, as well as the highest-voted bugs and features. To enhance the user experience, use dc.js (or any other js approach) to create dynamic charts.
 
