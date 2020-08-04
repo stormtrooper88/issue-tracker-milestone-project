@@ -203,15 +203,15 @@ to run the code locally then you can clone my git repository and run it an edito
 
 <h2>Credits</h2>
 
-Content
+<h3>Content</h3>
 
 •	All content is of my own work through the videos provided by Code Institute’s  E-commerce mini and Blog projects. 
 
-Media
+<h3>Media</h3>
 
 •	No photos or videos were used within this project.
 
-Acknowledgements
+<h3>Acknowledgements</h3>
 
 •	I would like to acknowledge the tutor support that now extends to my time zone and their patience with my questions. Especially Michael, Miklos and Tim. 
 
